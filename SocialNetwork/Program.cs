@@ -45,9 +45,9 @@ namespace SocialNetwork
                     Console.WriteLine("Please input correct values.");
                 }
 
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Registration error has occured.");
+                    Console.WriteLine($"Registration error has occured: {ex.Message}");
                 }
 
                 Console.ReadLine();
