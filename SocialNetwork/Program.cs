@@ -35,7 +35,7 @@ namespace SocialNetwork
                                 User user = userService.Authenticate(authenticationData);
 
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine("You've successfully logged in! Welcome back, {0}", user.FirstName);
+                                Console.WriteLine("You've successfully logged in! Welcome back, {0}!", user.FirstName);
                                 Console.ForegroundColor = ConsoleColor.White;
 
                                 while (true)
