@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DAL\DB\social_network_bd.db" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
   </ItemGroup>
@@ -21,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DAL\DB\" />
+    <None Update="DAL\DB\social_network_bd.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
