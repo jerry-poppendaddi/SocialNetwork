@@ -33,11 +33,11 @@ namespace SocialNetwork.DAL.Repositories
                 connection.Open();
                 return connection.Execute(sql, parameters);
             }
-        }
+        }        
 
         private IDbConnection CreateConnection()
         {
             return new SQLiteConnection("Data Source = DAL/DB/social_network_bd.db; Version = 3");
-        }
+        }       
     }
 }

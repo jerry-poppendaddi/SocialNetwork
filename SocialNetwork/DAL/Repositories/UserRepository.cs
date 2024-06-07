@@ -1,4 +1,5 @@
-﻿using SocialNetwork.DAL.Entities;
+﻿using SocialNetwork.BLL.Models;
+using SocialNetwork.DAL.Entities;
 using System.Collections.Generic;
 
 namespace SocialNetwork.DAL.Repositories
@@ -23,14 +24,14 @@ namespace SocialNetwork.DAL.Repositories
 
         public UserEntity FindById(int id)
         {
-            return QueryFirstOrDefault<UserEntity>("select * from users where id = :id_p", new { id_p = id });
+            return QueryFirstOrDefault<UserEntity>("SELECT COUNT(*) FROM friends WHERE UserId = @UserId", new { id_p = id });
         }
 
         public int Update(UserEntity userEntity)
         {
             return Execute(@"update users set firstname = :firstname, lastname = :lastname, password = :password, email = :email,
                              photo = :photo, favorite_movie = :favorite_movie, favorite_book = :favorite_book where id = :id", userEntity);
-        }
+        }          
 
         public int DeleteById(int id)
         {
